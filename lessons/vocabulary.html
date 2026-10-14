@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Словник · Pie Charts</title>
+<link rel="stylesheet" href="../shared/core.css">
+<style>.vc-sec summary{font-size:16px} table.vc-t{font-size:14.5px} body{padding-bottom:40px}</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Словник · Pie Charts</h1>
+  <p class="sub">Рівень Band 7.0–7.5. Це довідка, а не текст для читання: тримай відкритою під час письма. «Основа» достатньо для Band 7, розділ «Додатково» вмикається галочкою.</p>
+  <div id="v"></div>
+</div>
+<script src="../data/vocab.js"></script>
+<script src="../shared/vocab.js"></script>
+<script>
+  var f=(new URLSearchParams(location.search).get('focus')||'').split(',').filter(Boolean);
+  window.renderVocab(document.getElementById('v'),{focus:f});
+  document.querySelectorAll('.vc-sec').forEach(function(d){d.open=true;});
+  document.querySelector('.vc-tools').style.top='0';
+</script>
+</body>
+</html>
